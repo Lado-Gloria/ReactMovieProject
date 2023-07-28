@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getMovieDetails } from "../utils/utilities";
+import './style.css'
+import Navbar from "../navbar";
+import { IoIosHeartEmpty } from "react-icons/io";
 
 const IMAGE_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL;
 
@@ -22,36 +25,33 @@ const MovieDetails = () => {
 
   return (
     <>
+    <Navbar></Navbar>
       {moviedetail && (
-        <>
-          <div>
-            <div>
-              <div>
-                <p>{moviedetail.adult}</p>
-                <img src={`${IMAGE_BASE_URL}${moviedetail.poster_path}`} alt={moviedetail.title} />
-                <div>
-                  {/* <span>&#9679;</span>
-                  <span>&#9679;</span> */}
-                  <div>{moviedetail.title} </div>
-                </div>
-                <div>
-                  <p>{moviedetail.vote_count}</p>
-                </div>
-              </div>
-              <div>
-                <p>{moviedetail.overview}</p>
-              </div>
+          <div className="movie-details-div">
+            <div className="movie-botton">
+            <img src={`${IMAGE_BASE_URL}${moviedetail.poster_path}`} alt={moviedetail.title}/>
+            <br/>
+            <button>Watch Now</button>
             </div>
-            <div>
-              <div>
-                <button>Watch Now</button>
+            <div className="movie-details">
+              <h2>{moviedetail.title}</h2><span className="favorite-icon"><IoIosHeartEmpty className="fav-icon"></IoIosHeartEmpty></span>
+              <div className="three-divs">
+              {/* <p>{moviedetail.overview}</p> */}
               </div>
             </div>
           </div>
-        </>
       )}
     </>
   );
 };
 
 export default MovieDetails;
+
+
+{/* <p>{moviedetail.adult}</p>
+<img src={`${IMAGE_BASE_URL}${moviedetail.poster_path}`} alt={moviedetail.title} />
+<div>{moviedetail.title} </div>
+<p>{moviedetail.vote_count}</p>
+<p>{moviedetail.vote_count}</p>
+<p>{moviedetail.overview}</p>
+<button>Watch Now</button> */}
