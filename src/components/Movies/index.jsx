@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getMovies, getGenres } from "../../utils/utilities";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
@@ -67,12 +68,11 @@ const MovieList = () => {
       <div className="imageContainer">
         {movies && movies.length > 0 ? (
           movies.map((item) => (
-            <div key={item.id} className="images">
-              <img
-                src={`${IMAGE_BASE_URL}${item.poster_path}`}
-                alt={item.title}
-              />
-            </div>
+            <Link to={`/MovieDetails/${item.id}`} key={item.id}>
+              <div className="images">
+                <img src={`${IMAGE_BASE_URL}${item.poster_path}`} alt={item.title} />
+              </div>
+            </Link>
           ))
         ) : (
           <h3>No movies found for the selected genre.</h3>
