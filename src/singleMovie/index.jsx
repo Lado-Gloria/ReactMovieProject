@@ -4,6 +4,7 @@ import { getMovieDetails } from "../utils/utilities";
 import './style.css'
 import Navbar from "../navbar";
 import { IoIosHeartEmpty } from "react-icons/io";
+import Footer from "../footer";
 
 const IMAGE_BASE_URL = process.env.REACT_APP_IMAGE_BASE_URL;
 
@@ -40,7 +41,10 @@ const MovieDetails = () => {
               </div>
             </div>
           </div>
+          
+
       )}
+      <Footer></Footer>
     </>
   );
 };
