@@ -30,13 +30,13 @@ const Carousel = () => {
           </div>
 
           <div className="center">
-            <p>{images[currImg].duration}</p>
+            <p className="center-p">{images[currImg].duration}</p>
             <h1 className="center-h1">{images[currImg].title}</h1>
             <p className="center-status">
               <span>
                  {images[currImg].status}
               </span>
-              </p>
+            </p>
 
             <p className="center-rating">
               <span>
