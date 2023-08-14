@@ -19,6 +19,7 @@
 .imageContainer{
   display: grid;
   grid-template-columns: repeat(3,1fr);
+  gap: 1%;
 }
 }
 
@@ -26,6 +27,7 @@
   .imageContainer{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    gap: .5%;
   }
 }
 
@@ -34,6 +36,7 @@
   .imageContainer{
     display: grid;
     grid-template-columns: repeat(1,1fr);
+    gap: .1%;
   }
 }
 
@@ -78,6 +81,8 @@
 }
 
 
-
+.genreNavbar{
+  padding-left: 1.4em;
+}
 
 
