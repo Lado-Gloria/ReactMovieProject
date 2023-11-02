@@ -16,7 +16,7 @@ const Carousel = () => {
   };
 
   const goToNextImage = () => {
-    // If on the last image, go to the first image
+   
     const newCurrImg = (currImg + 1) % images.length;
     setCurrImg(newCurrImg);
   };
